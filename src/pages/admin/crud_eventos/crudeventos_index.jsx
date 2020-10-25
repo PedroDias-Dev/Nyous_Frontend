@@ -21,7 +21,7 @@ const CrudEventos = () => {
     }, []);
 
     const listarCategorias = () => {
-        fetch(url + '/categorias')
+        fetch('http://localhost:62602/api/Categorias')
             .then(response => response.json())
             .then(data => {
                 setCategorias(data.data)
@@ -31,7 +31,7 @@ const CrudEventos = () => {
     }
 
     const listarEventos = () => {
-        fetch(url + '/Eventos')
+        fetch('http://localhost:62602/api/Eventos')
             .then(response => response.json())
             .then(data => {
                 setEventos(data.data)
@@ -88,7 +88,7 @@ const CrudEventos = () => {
             body : JSON.stringify(evento),
             headers : {
                 'content-type' : 'application/json',
-                'authorization' : 'Bearer ' + localStorage.getItem('token-nyous')
+                'authorization' : 'Bearer' + localStorage.getItem('token-nyous-tarde')
             }
         })
         .then(response => response.json())
@@ -124,7 +124,7 @@ const CrudEventos = () => {
         fetch(`${url}/Eventos/${event.target.value}`,{
             method : 'DELETE',
             headers : {
-                'authorization' : 'Bearer ' + localStorage.getItem('token-nyous')
+                'authorization' : 'Bearer' + localStorage.getItem('token-nyous-tarde')
             }
         })
         .then(response => response.json())
