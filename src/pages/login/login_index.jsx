@@ -10,7 +10,6 @@ import './index.css';
 
 const Login = () => {
     const history = useHistory();
-    //string email {get; set;}
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 

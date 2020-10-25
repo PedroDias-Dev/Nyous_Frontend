@@ -31,7 +31,7 @@ const CrudEventos = () => {
     }
 
     const listarEventos = () => {
-        fetch(url + '/eventos')
+        fetch(url + '/Eventos')
             .then(response => response.json())
             .then(data => {
                 setEventos(data.data)
@@ -80,9 +80,8 @@ const CrudEventos = () => {
 
         }
 
-        //if ternário para saber se vai fazer um post ou put
         let method = (id === 0 ? 'POST' : 'PUT');
-        let urlRequest = (id === 0 ? `${url}/eventos` : `${url}/eventos/${id}`);
+        let urlRequest = (id === 0 ? `${url}/Eventos` : `${url}/Eventos/${id}`);
 
         fetch(urlRequest, {
             method : method,
@@ -104,7 +103,7 @@ const CrudEventos = () => {
     const editar = (event) => {
         event.preventDefault();
 
-        fetch(`${url}/eventos/${event.target.value}`, {
+        fetch(`${url}/Eventos/${event.target.value}`, {
             method : 'GET'
         })
         .then(response => response.json())
@@ -122,7 +121,7 @@ const CrudEventos = () => {
     const remover = (event) => {
         event.preventDefault();
 
-        fetch(`${url}/eventos/${event.target.value}`,{
+        fetch(`${url}/Eventos/${event.target.value}`,{
             method : 'DELETE',
             headers : {
                 'authorization' : 'Bearer ' + localStorage.getItem('token-nyous')

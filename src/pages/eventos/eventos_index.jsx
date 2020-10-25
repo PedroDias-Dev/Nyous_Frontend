@@ -13,7 +13,7 @@ const Eventos = () => {
     }, []);
 
     const listarEventos = () => {
-        fetch(url + '/eventos')
+        fetch(url + '/Eventos')
             .then(response => response.json())
             .then(data => {
                 setEventos(data.data)

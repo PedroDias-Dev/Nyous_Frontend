@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Menu from '../../../components/menu/menu_index';
 import Rodape from '../../../components/rodape/rodape_index';
 
